@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Юрист частной практики в Екатеринбурге — семейное, трудовое, имущественное право, защита потребителей, автоюрист. Индивидуальный подход, прозрачные условия." />
+  <title>Анастасия Кочеткова — Юрист частной практики | Екатеринбург</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: основной шрифт сайта -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome — иконки -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ========== ШАПКА / НАВИГАЦИЯ ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="header__logo">
+        <span class="header__logo-icon">⚖</span>
+        <span>Анастасия <span class="header__logo-thin">Кочеткова</span></span>
+      </a>
+
+      <!-- Навигационное меню (десктоп) -->
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#services" class="nav__link">Услуги</a></li>
+          <li><a href="#about"    class="nav__link">Обо мне</a></li>
+          <li><a href="#cases"    class="nav__link">Практика</a></li>
+          <li><a href="#reviews"  class="nav__link">Отзывы</a></li>
+          <li><a href="#contact"  class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn btn--outline header__cta">Получить консультацию</a>
+
+      <!-- Кнопка бургер-меню (мобильная) -->
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO / ГЛАВНЫЙ ЭКРАН ========== -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+
+        <div class="hero__text">
+          <p class="hero__eyebrow">Юрист частной практики · Екатеринбург</p>
+          <h1 class="hero__title">Решаю ваши правовые <br>вопросы <em>результативно</em></h1>
+          <p class="hero__subtitle">
+            Семейное, трудовое, имущественное право, защита потребителей и автоюрист
+            в Екатеринбурге и Свердловской области. Каждое дело — индивидуально,
+            каждый результат — максимально выгоден для вас.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Записаться на консультацию</a>
+            <a href="#services" class="btn btn--ghost">Узнать об услугах</a>
+          </div>
+          <!-- Ключевые цифры -->
+          <div class="hero__stats">
+            <div class="stat">
+              <span class="stat__num">100+</span>
+              <span class="stat__label">завершённых дел</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">12</span>
+              <span class="stat__label">лет практики</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">9</span>
+              <span class="stat__label">направлений</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Фото юриста — замените src на реальное фото -->
+        <div class="hero__photo-wrap">
+          <img
+            src="img/photo-hero.jpg"
+            alt="Анастасия Кочеткова — юрист частной практики, Екатеринбург"
+            class="hero__photo"
+            width="480" height="580"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== УСЛУГИ ========== -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Чем могу помочь</p>
+          <h2 class="section-title">Направления практики</h2>
+          <p class="section-desc">Оказываю полный спектр юридических услуг для физических и юридических лиц.</p>
+        </div>
+
+        <div class="services__grid">
+
+          <!-- Карточка услуги -->
+          <article class="service-card">
+            <div class="service-card__icon"><i class="fa-solid fa-heart"></i></div>
+            <h3 class="service-card__title">Семейное право</h3>
+            <p class="service-card__text">Расторжение брака, раздел имущества, определение места жительства детей, взыскание и оспаривание алиментов.</p>
+            <a href="#contact" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3 class="service-card__title">Трудовые споры</h3>
+            <p class="service-card__text">Незаконное увольнение, невыплата зарплаты, восстановление на работе, защита прав работника и работодателя.</p>
+            <a href="#contact" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="service-card__title">Защита прав потребителей</h3>
+            <p class="service-card__text">Возврат товара, претензии к качеству услуг, навязанные услуги, взыскание неустойки с продавца или исполнителя.</p>
+            <a href="#contact" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon"><i class="fa-solid fa-house"></i></div>
+            <h3 class="service-card__title">Имущественные споры</h3>
+            <p class="service-card__text">Оформление сделок с движимым и недвижимым имуществом, неосновательное обогащение, споры с застройщиками.</p>
+            <a href="#contact" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon"><i class="fa-solid fa-car"></i></div>
+            <h3 class="service-card__title">Автоюрист</h3>
+            <p class="service-card__text">Споры со страховыми компаниями, взыскание выплат по ОСАГО/КАСКО, ДТП, лишение водительских прав, оспаривание штрафов.</p>
+            <a href="#contact" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon"><i class="fa-solid fa-landmark"></i></div>
+            <h3 class="service-card__title">Административные дела и госорганы</h3>
+            <p class="service-card__text">Представление интересов в государственных органах, административные споры, защита социальных прав, обжалование решений.</p>
+            <a href="#contact" class="service-card__link">Подробнее →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ОБО МНЕ ========== -->
+    <section class="about section" id="about">
+      <div class="container about__inner">
+
+        <!-- Фото для блока "Обо мне" — замените на реальное -->
+        <div class="about__photo-wrap">
+          <img
+            src="img/photo-about.jpg"
+            alt="Анастасия Кочеткова — юрист частной практики в Екатеринбурге"
+            class="about__photo"
+            width="520" height="600"
+          />
+          <!-- Документ / диплом поверх -->
+          <div class="about__stats-badges">
+            <div class="about__stat-badge">
+              <span class="about__stat-num">12</span>
+              <span class="about__stat-label">лет стажа</span>
+            </div>
+            <div class="about__stat-badge">
+              <span class="about__stat-num">100+</span>
+              <span class="about__stat-label">завершённых дел</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <p class="section-eyebrow">Обо мне</p>
+          <h2 class="section-title">Анастасия Кочеткова</h2>
+          <p class="about__role">Юрист частной практики · Екатеринбург</p>
+
+          <p class="about__text">
+            Специализируюсь на наиболее востребованных направлениях: семейное, трудовое,
+            имущественное и административное право, защита прав потребителей, автоюридическая
+            помощь. Работаю преимущественно в Екатеринбурге и Свердловской области.
+          </p>
+          <p class="about__text">
+            Каждое дело рассматриваю как уникальное, с учётом всех нюансов ситуации.
+            Ценю ваше время — беру на себя полное сопровождение и представление интересов,
+            минимизируя вашу личную вовлечённость в процесс.
+          </p>
+
+          <ul class="about__list">
+            <li>Уральский государственный юридический университет, 2012 — Юриспруденция (юрист)</li>
+            <li>Стаж 12 лет, более 100 успешно завершённых дел</li>
+            <li>Представление интересов в судах Свердловской области</li>
+            <li>Защита клиентов в государственных органах и надзорных инстанциях</li>
+          </ul>
+
+          <a href="#contact" class="btn btn--primary">Задать вопрос юристу</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== ПОЧЕМУ Я / ПРЕИМУЩЕСТВА ========== -->
+    <section class="why section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Преимущества</p>
+          <h2 class="section-title">Почему выбирают меня</h2>
+        </div>
+
+        <div class="why__grid">
+          <div class="why-item">
+            <div class="why-item__num">01</div>
+            <h3 class="why-item__title">Узкая специализация и глубокая экспертиза</h3>
+            <p class="why-item__text">Работаю только в наиболее востребованных направлениях — знаю все тонкости действующего законодательства в каждом из них.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-item__num">02</div>
+            <h3 class="why-item__title">Индивидуальный подход</h3>
+            <p class="why-item__text">Каждое дело рассматривается как уникальное, с учётом всех нюансов. Никаких шаблонных решений — только анализ именно вашей ситуации.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-item__num">03</div>
+            <h3 class="why-item__title">Прозрачность и честность</h3>
+            <p class="why-item__text">Чёткое ценообразование, понятное объяснение всех этапов работы и честная оценка рисков ещё до заключения договора.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-item__num">04</div>
+            <h3 class="why-item__title">Экономия вашего времени и нервов</h3>
+            <p class="why-item__text">Беру на себя полное сопровождение и представление ваших интересов — минимизирую вашу вовлечённость в процесс.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== КЕЙСЫ / ПРАКТИКА ========== -->
+    <section class="cases section" id="cases">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Избранные дела</p>
+          <h2 class="section-title">Из практики</h2>
+          <p class="section-desc">Примеры успешно завершённых дел (имена клиентов изменены в соответствии с принципом конфиденциальности).</p>
+        </div>
+
+        <div class="cases__grid">
+          <div class="case-card">
+            <span class="case-card__tag">Защита потребителей</span>
+            <h3 class="case-card__title">Взыскание неустойки с застройщика</h3>
+            <p class="case-card__text">Клиент приобрёл квартиру с существенными недостатками. Добились полного возмещения расходов на устранение нарушений и компенсации морального вреда по закону о защите прав потребителей.</p>
+            <div class="case-card__result">Результат: <strong>требования удовлетворены в полном объёме</strong></div>
+          </div>
+          <div class="case-card">
+            <span class="case-card__tag">Семейное право</span>
+            <h3 class="case-card__title">Раздел имущества при разводе</h3>
+            <p class="case-card__text">Представляли интересы клиентки в бракоразводном процессе. Оспорили сделки, совершённые супругом с целью сокрытия активов, добились справедливого раздела имущества.</p>
+            <div class="case-card__result">Результат: <strong>клиент получил 60% совместного имущества</strong></div>
+          </div>
+          <div class="case-card">
+            <span class="case-card__tag">Автоюрист</span>
+            <h3 class="case-card__title">Взыскание выплаты по ОСАГО</h3>
+            <p class="case-card__text">Страховая компания отказала в выплате по ОСАГО после ДТП, занизив размер ущерба. В судебном порядке добились полного возмещения ущерба, штрафа и неустойки.</p>
+            <div class="case-card__result">Результат: <strong>взыскано в 3 раза больше первоначального предложения</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ОТЗЫВЫ ========== -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Отзывы</p>
+          <h2 class="section-title">Что говорят клиенты</h2>
+        </div>
+
+        <div class="reviews__grid">
+
+          <blockquote class="review-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">
+              «Анастасия помогла мне в споре со страховой — отказывали в выплате по ОСАГО.
+              Всё объяснила понятным языком, никаких сюрпризов с ценой. В итоге взыскали
+              сумму втрое больше. Очень рекомендую!»
+            </p>
+            <footer class="review-card__author">
+              <!-- Аватар клиента — можно заменить на реальное фото -->
+              <img src="https://placehold.co/48x48/1a2744/e8d5a3?text=СВ" alt="Сергей В." class="review-card__avatar" />
+              <div>
+                <cite class="review-card__name">Сергей В.</cite>
+                <span class="review-card__meta">Екатеринбург, 2024</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">
+              «Обратилась за помощью при разводе и разделе имущества. Анастасия максимально
+              защитила мои интересы, всегда была на связи. Спокойный, профессиональный подход
+              в очень непростой ситуации.»
+            </p>
+            <footer class="review-card__author">
+              <img src="https://placehold.co/48x48/1a2744/e8d5a3?text=ЕМ" alt="Елена М." class="review-card__avatar" />
+              <div>
+                <cite class="review-card__name">Елена М.</cite>
+                <span class="review-card__meta">Екатеринбург, 2024</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">
+              «Помогла восстановиться на работе после незаконного увольнения. Быстро,
+              чётко, результативно. Никогда не думал, что это реально, но Анастасия
+              добилась выплаты всей задолженности по зарплате.»
+            </p>
+            <footer class="review-card__author">
+              <img src="https://placehold.co/48x48/1a2744/e8d5a3?text=АП" alt="Андрей П." class="review-card__avatar" />
+              <div>
+                <cite class="review-card__name">Андрей П.</cite>
+                <span class="review-card__meta">Свердловская обл., 2025</span>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ФОРМА ОБРАТНОЙ СВЯЗИ / КОНТАКТЫ ========== -->
+    <section class="contact section" id="contact">
+      <div class="container contact__inner">
+
+        <div class="contact__info">
+          <p class="section-eyebrow">Связаться</p>
+          <h2 class="section-title">Получите консультацию</h2>
+          <p class="contact__desc">
+            Первичная консультация — бесплатно. Опишите ситуацию в форме или свяжитесь
+            любым удобным способом. Работаю в Екатеринбурге и Свердловской области.
+          </p>
+
+          <ul class="contact__details">
+            <li>
+              <span class="contact__icon">📍</span>
+              <span>г. Екатеринбург, ул. Малышева, 19</span>
+            </li>
+            <li>
+              <span class="contact__icon">📞</span>
+              <a href="tel:+79193654197">+7 (919) 365-41-97</a>
+            </li>
+            <li>
+              <span class="contact__icon">✉</span>
+              <a href="mailto:a.kochetkova1990@mail.ru">a.kochetkova1990@mail.ru</a>
+            </li>
+            <li>
+              <span class="contact__icon">🕐</span>
+              <span>Пн–Пт: 9:00–19:00, Сб: 10:00–15:00</span>
+            </li>
+          </ul>
+
+          <!-- Ссылки на мессенджеры -->
+          <div class="contact__messengers">
+            <a href="https://t.me/Anastyakoch" class="messenger-btn messenger-btn--tg" aria-label="Написать в Telegram" target="_blank" rel="noopener">Telegram</a>
+          </div>
+        </div>
+
+        <!-- Форма заявки -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name" class="form-label">Ваше имя *</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Иван Иванов" required />
+            <span class="form-error" id="nameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Телефон *</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required />
+            <span class="form-error" id="phoneError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="ivan@example.com" />
+            <span class="form-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="service" class="form-label">Тип вопроса</label>
+            <select id="service" name="service" class="form-input form-select">
+              <option value="">— Выберите направление —</option>
+              <option value="civil">Гражданские споры</option>
+              <option value="family">Семейное право</option>
+              <option value="corporate">Корпоративное право</option>
+              <option value="contract">Договорная работа</option>
+              <option value="realty">Недвижимость</option>
+              <option value="criminal">Уголовная защита</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Кратко опишите ситуацию</label>
+            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Опишите вашу ситуацию..." rows="4"></textarea>
+          </div>
+
+          <p class="form-consent">
+            Нажимая кнопку, вы соглашаетесь с
+            <a href="#" class="form-consent__link">политикой обработки персональных данных</a>.
+          </p>
+
+          <button type="submit" class="btn btn--primary form-submit">Отправить заявку</button>
+
+          <!-- Сообщение об успешной отправке (скрыто по умолчанию) -->
+          <div class="form-success" id="formSuccess" aria-live="polite" hidden>
+            Спасибо! Мы свяжемся с вами в течение 1 рабочего часа.
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="header__logo-icon">⚖</span>
+        <span>Анастасия <span class="header__logo-thin">Кочеткова</span></span>
+      </div>
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <a href="#services">Услуги</a>
+        <a href="#about">Обо мне</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <p class="footer__copy">
+        © 2025 Анастасия Кочеткова. Все права защищены.<br />
+        <small>Информация на сайте не является юридической консультацией.</small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Кнопка "Наверх" -->
+  <button class="scroll-top" id="scrollTop" aria-label="Наверх" hidden>↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
