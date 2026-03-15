@@ -246,4 +246,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animateItems.forEach(el => observer.observe(el));
 
+
+  /* ── 9. Плавающая кнопка контактов (FAB) ────────────────── */
+  const fab       = document.getElementById('fab');
+  const fabToggle = document.getElementById('fabToggle');
+
+  if (fabToggle) {
+    fabToggle.addEventListener('click', () => {
+      fab.classList.toggle('open');
+    });
+
+    // Закрываем при клике вне FAB
+    document.addEventListener('click', (e) => {
+      if (!fab.contains(e.target)) {
+        fab.classList.remove('open');
+      }
+    });
+  }
+
+
+  /* ── 10. Cookie-баннер ──────────────────────────────────── */
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieAccept = document.getElementById('cookieAccept');
+
+  if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
+    cookieBanner.hidden = false;
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieBanner.hidden = true;
+    });
+  }
+
 }); // end DOMContentLoaded

@@ -261,9 +261,17 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .hero__inner {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 4rem;
-  align-items: center;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.hero__photo-wrap {
+  align-self: start;
+}
+
+.hero__text {
+  justify-self: start;
 }
 
 .hero__eyebrow {
@@ -328,15 +336,22 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .hero__photo-wrap {
   position: relative;
   flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  justify-self: center;
 }
 
 .hero__photo {
-  width: clamp(240px, 30vw, 400px);
+  width: 100%;
+  max-width: 380px;
   height: auto;
-  aspect-ratio: 480/580;
+  aspect-ratio: 3/4;
   object-fit: cover;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 var(--radius-lg);
-  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  object-position: top center;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  border: 3px solid rgba(201,168,76,0.25);
 }
 
 .hero__badge {
@@ -513,6 +528,20 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   flex-shrink: 0;
 }
 
+.about__trust {
+  background: var(--color-cream);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+.about__trust-text {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: 0;
+}
+
 /* ── 8. Преимущества ───────────────────────────────────────── */
 .why { background: var(--color-navy); color: var(--color-white); }
 .why .section-title { color: var(--color-white); }
@@ -673,6 +702,52 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .review-card__meta {
   font-size: 0.8rem;
   color: var(--color-text-muted);
+}
+
+/* ── 10½. FAQ ──────────────────────────────────────────────── */
+.faq { background: var(--color-white); }
+
+.faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--transition);
+}
+.faq__question::-webkit-details-marker { display: none; }
+.faq__question::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: transform var(--transition);
+}
+.faq__item[open] .faq__question::after {
+  content: '−';
+}
+.faq__question:hover { color: var(--color-gold); }
+
+.faq__answer {
+  padding: 0 0 1.25rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
 }
 
 /* ── 11. Контакты / Форма ──────────────────────────────────── */
@@ -860,6 +935,187 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transform: translateY(-3px);
 }
 
+/* ── 14. Плавающая кнопка контактов (FAB) ─────────────────── */
+.fab {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  z-index: 95;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.fab__toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-navy);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+  transition: var(--transition);
+  position: relative;
+}
+.fab__toggle:hover {
+  background: var(--color-gold-light);
+  transform: scale(1.05);
+}
+
+.fab__icon {
+  position: absolute;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.fab__icon--close {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+.fab.open .fab__icon--open {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.fab.open .fab__icon--close {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.fab__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+.fab.open .fab__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fab__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 28px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-white);
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: var(--transition);
+  text-decoration: none;
+}
+.fab__item:hover {
+  transform: translateX(-4px);
+}
+.fab__item i {
+  font-size: 1.1rem;
+}
+
+.fab__item--phone {
+  background: var(--color-navy);
+}
+.fab__item--phone:hover {
+  background: var(--color-navy-light);
+}
+
+.fab__item--tg {
+  background: #229ed9;
+}
+.fab__item--tg:hover {
+  background: #1a8bbf;
+}
+
+@media (max-width: 768px) {
+  .fab {
+    bottom: 5rem;
+    right: 1rem;
+  }
+  .fab__toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+
+/* ── 15. Cookie-баннер ────────────────────────────────────── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--color-navy);
+  border-top: 2px solid var(--color-gold);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
+  padding: 1.25rem var(--container-px);
+  animation: cookieSlideUp 0.4s ease;
+}
+
+@keyframes cookieSlideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.cookie-banner__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cookie-banner__text {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cookie-banner__text a {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+  transition: color var(--transition);
+}
+.cookie-banner__text a:hover {
+  color: var(--color-gold);
+}
+
+.cookie-banner__btn {
+  background: var(--color-gold);
+  color: var(--color-navy);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.65rem 1.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.cookie-banner__btn:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .cookie-banner__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .cookie-banner__btn {
+    width: 100%;
+  }
+}
+
 /* ── 14. Адаптив ───────────────────────────────────────────── */
 
 /* ── Большой планшет / небольшой ноутбук (≤ 1100px) ─────────── */
@@ -898,11 +1154,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .burger { display: flex; }
 
   .hero__inner {
-    grid-template-columns: 1fr auto;
-    gap: 2.5rem;
+    grid-template-columns: 1fr 280px;
+    gap: 2rem;
   }
   .hero__photo {
-    width: clamp(180px, 22vw, 280px);
+    max-width: 260px;
   }
 
   .about__inner {
@@ -938,15 +1194,17 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     grid-template-columns: 1fr;
     text-align: center;
   }
+  .hero__text { justify-self: center; }
   .hero__subtitle { margin-inline: auto; }
   .hero__actions  { justify-content: center; }
   .hero__stats    { justify-content: center; }
   .hero__photo-wrap {
+    order: -1;
     display: flex;
     justify-content: center;
   }
   .hero__photo {
-    width: clamp(200px, 55vw, 340px);
+    width: clamp(220px, 50vw, 320px);
   }
 
   .services__grid  { grid-template-columns: 1fr; }

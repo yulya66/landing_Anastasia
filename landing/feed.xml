@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Юрист Анастасия Кочеткова — Екатеринбург</title>
+    <link>https://ak-law66.ru/</link>
+    <description>Юрист частной практики в Екатеринбурге. Семейное, трудовое, военное право, автоюрист, защита прав потребителей. Бесплатная консультация.</description>
+    <language>ru</language>
+    <lastBuildDate>Sat, 15 Mar 2026 00:00:00 +0500</lastBuildDate>
+    <atom:link href="https://ak-law66.ru/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Юридические услуги в Екатеринбурге — 10 направлений практики</title>
+      <link>https://ak-law66.ru/#services</link>
+      <description>Семейное, трудовое, имущественное, договорное, военное право, защита прав потребителей, социальных прав, автоюрист, административные дела, сопровождение бизнеса.</description>
+      <pubDate>Sat, 15 Mar 2026 00:00:00 +0500</pubDate>
+      <guid>https://ak-law66.ru/#services</guid>
+    </item>
+    <item>
+      <title>Бесплатная юридическая консультация в Екатеринбурге</title>
+      <link>https://ak-law66.ru/#contact</link>
+      <description>Первичная консультация юриста — бесплатно. Оставьте заявку на сайте, позвоните или напишите в Telegram.</description>
+      <pubDate>Sat, 15 Mar 2026 00:00:00 +0500</pubDate>
+      <guid>https://ak-law66.ru/#contact</guid>
+    </item>
+  </channel>
+</rss>
