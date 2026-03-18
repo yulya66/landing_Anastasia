@@ -280,4 +280,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── Яндекс.Метрика: цели ──────────────────────────────────
+  // ЗАМЕНИТЕ XXXXX на ваш номер счётчика
+  function ymGoal(target) {
+    if (typeof ym === 'function') ym(XXXXX, 'reachGoal', target);
+  }
+
+  // Клик по телефону
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+    link.addEventListener('click', function() { ymGoal('click_phone'); });
+  });
+
+  // Клик по Telegram
+  document.querySelectorAll('a[href*="t.me/"]').forEach(function(link) {
+    link.addEventListener('click', function() { ymGoal('click_telegram'); });
+  });
+
+  // Отправка формы
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function() { ymGoal('submit_form'); });
+  }
+
 }); // end DOMContentLoaded
