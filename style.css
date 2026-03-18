@@ -431,7 +431,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
-  align-items: center;
+  align-items: start;
 }
 
 .about__photo-wrap {
@@ -796,8 +796,25 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 600;
   transition: var(--transition);
 }
-.messenger-btn--tg  { background: #229ed9; color: #fff; }
-.messenger-btn--tg:hover  { background: #1a8bbf; }
+.messenger-btn--tg  {
+  background: linear-gradient(135deg, #229ed9, #1b6fa8, #2aabee, #229ed9);
+  background-size: 300% 300%;
+  animation: tgGradient 4s ease infinite;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.messenger-btn--tg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: tgShimmer 3s ease-in-out infinite;
+}
+.messenger-btn--tg:hover  { background-size: 300% 300%; filter: brightness(1.1); }
 .messenger-btn--wa  { background: #25d366; color: #fff; }
 .messenger-btn--wa:hover  { background: #1dad55; }
 .messenger-btn--ig  { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
@@ -938,13 +955,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* ── 14. Плавающая кнопка контактов (FAB) ─────────────────── */
 .fab {
   position: fixed;
-  bottom: 2rem;
-  right: 5.5rem;
+  bottom: calc(2rem + 44px + 0.75rem);
+  right: 2rem;
   z-index: 95;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;
-  gap: 0.75rem;
 }
 
 .fab__toggle {
@@ -960,6 +973,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   box-shadow: 0 4px 20px rgba(201,168,76,0.4);
   transition: var(--transition);
   position: relative;
+  margin-left: auto;
 }
 .fab__toggle:hover {
   background: var(--color-gold-light);
@@ -984,6 +998,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 .fab__menu {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -1028,23 +1045,37 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 .fab__item--tg {
-  background: #229ed9;
+  background: linear-gradient(135deg, #229ed9, #1b6fa8, #2aabee, #229ed9);
+  background-size: 300% 300%;
+  animation: tgGradient 4s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+.fab__item--tg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: tgShimmer 3s ease-in-out infinite;
 }
 .fab__item--tg:hover {
-  background: #1a8bbf;
+  filter: brightness(1.1);
 }
 
 @media (max-width: 768px) {
   .scroll-top {
     width: 38px;
     height: 38px;
-    bottom: 0.75rem;
-    right: 0.75rem;
+    bottom: 1rem;
+    right: 1rem;
     font-size: 0.9rem;
   }
   .fab {
-    bottom: 0.75rem;
-    right: 3.75rem;
+    bottom: calc(1rem + 38px + 0.5rem);
+    right: 1rem;
   }
   .fab__toggle {
     width: 38px;
@@ -1080,6 +1111,17 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
   padding: 1.25rem var(--container-px);
   animation: cookieSlideUp 0.4s ease;
+}
+
+@keyframes tgGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes tgShimmer {
+  0%   { left: -100%; }
+  60%  { left: 120%; }
+  100% { left: 120%; }
 }
 
 @keyframes cookieSlideUp {
@@ -1246,6 +1288,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   }
 
   .scroll-top { bottom: 1rem; right: 1rem; }
+  .fab { bottom: calc(1rem + 38px + 0.5rem); right: 1rem; }
 }
 
 /* ── Мобильный (≤ 600px) ─────────────────────────────────────── */
