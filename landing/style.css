@@ -435,7 +435,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 .about__photo-wrap {
-  position: relative;
+  position: sticky;
+  top: 6rem;
+  align-self: start;
   flex-shrink: 0;
 }
 .about__photo {
@@ -1230,6 +1232,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     gap: 2.5rem;
   }
   .about__photo-wrap {
+    position: relative;
+    top: auto;
     max-width: 460px;
     margin-inline: auto;
   }
