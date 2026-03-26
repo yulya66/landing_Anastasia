@@ -185,32 +185,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!isValid) return;
 
-      // ──────────────────────────────────────────────────────
-      // ИНТЕГРАЦИЯ С БЭКЕНДОМ
-      // Замените блок ниже реальным fetch/axios-запросом.
-      // Пример:
-      //
-      // const data = new FormData(form);
-      // fetch('/api/contact', { method: 'POST', body: data })
-      //   .then(r => r.json())
-      //   .then(() => showSuccess())
-      //   .catch(() => alert('Ошибка отправки, попробуйте позже'));
-      //
-      // ──────────────────────────────────────────────────────
-
-      // Временно: имитируем отправку через setTimeout
       const submitBtn = form.querySelector('.form-submit');
       submitBtn.textContent = 'Отправляем...';
       submitBtn.disabled = true;
 
-      setTimeout(() => {
-        form.reset();
-        submitBtn.textContent = 'Отправить заявку';
-        submitBtn.disabled = false;
-        formSuccess.hidden = false;
-        // Скрываем сообщение об успехе через 6 секунд
-        setTimeout(() => { formSuccess.hidden = true; }, 6000);
-      }, 1200); // имитация задержки сети
+      const payload = {
+        name:    form.name.value.trim(),
+        phone:   form.phone.value.trim(),
+        email:   form.email.value.trim(),
+        service: form.service.value,
+        message: form.message.value.trim(),
+      };
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      })
+        .then(r => r.json())
+        .then(res => {
+          if (res.success) {
+            form.reset();
+            formSuccess.hidden = false;
+            setTimeout(() => { formSuccess.hidden = true; }, 6000);
+          } else {
+            alert('Ошибка отправки. Попробуйте позже или свяжитесь по телефону.');
+          }
+        })
+        .catch(() => {
+          alert('Ошибка сети. Попробуйте позже или свяжитесь по телефону.');
+        })
+        .finally(() => {
+          clearTimeout(timeout);
+          submitBtn.textContent = 'Отправить заявку';
+          submitBtn.disabled = false;
+        });
     });
   }
 
@@ -269,14 +282,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const cookieBanner = document.getElementById('cookieBanner');
   const cookieAccept = document.getElementById('cookieAccept');
 
+  /** Обновляет позицию FAB/scroll-top при видимом cookie-баннере */
+  const updateCookieOffset = () => {
+    if (cookieBanner && !cookieBanner.hidden) {
+      const h = cookieBanner.offsetHeight;
+      document.body.classList.add('cookie-visible');
+      document.documentElement.style.setProperty('--cookie-h', h + 'px');
+    } else {
+      document.body.classList.remove('cookie-visible');
+      document.documentElement.style.removeProperty('--cookie-h');
+    }
+  };
+
   if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
     cookieBanner.hidden = false;
+    updateCookieOffset();
   }
 
   if (cookieAccept) {
     cookieAccept.addEventListener('click', () => {
       localStorage.setItem('cookiesAccepted', 'true');
       cookieBanner.hidden = true;
+      updateCookieOffset();
     });
   }
 
@@ -294,6 +321,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Клик по Telegram
   document.querySelectorAll('a[href*="t.me/"]').forEach(function(link) {
     link.addEventListener('click', function() { ymGoal('click_telegram'); });
+  });
+
+  // Клик по MAX
+  document.querySelectorAll('a[href*="max.ru/"]').forEach(function(link) {
+    link.addEventListener('click', function() { ymGoal('click_max'); });
   });
 
   // Отправка формы
