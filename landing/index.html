@@ -674,11 +674,20 @@
             </li>
           </ul>
 
-          <!-- Ссылки на мессенджеры -->
-          <div class="contact__messengers">
-            <a href="https://t.me/Anastyakoch?start=utm_source_site_contact" class="messenger-btn messenger-btn--tg" aria-label="Написать в Telegram" target="_blank" rel="noopener">Telegram</a>
-            <a href="https://web.max.ru/139719611" class="messenger-btn messenger-btn--max" aria-label="Написать в MAX" target="_blank" rel="noopener">MAX</a>
-
+          <!-- Мессенджеры: кнопка + QR -->
+          <div class="contact__qr-codes">
+            <div class="contact__qr-group">
+              <a href="https://t.me/Anastyakoch?start=utm_source_site_contact" class="messenger-btn messenger-btn--tg" aria-label="Написать в Telegram" target="_blank" rel="noopener">Telegram</a>
+              <a href="https://t.me/Anastyakoch" class="contact__qr-card" target="_blank" rel="noopener">
+                <img src="img/qr-telegram.webp" alt="QR-код Telegram" width="160" height="160" loading="lazy" />
+              </a>
+            </div>
+            <div class="contact__qr-group">
+              <a href="https://web.max.ru/139719611" class="messenger-btn messenger-btn--max" aria-label="Написать в MAX" target="_blank" rel="noopener">MAX</a>
+              <a href="https://web.max.ru/139719611" class="contact__qr-card" target="_blank" rel="noopener">
+                <img src="img/qr-max.webp" alt="QR-код MAX" width="160" height="160" loading="lazy" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -738,7 +747,7 @@
 
           <!-- Сообщение об успешной отправке (скрыто по умолчанию) -->
           <div class="form-success" id="formSuccess" aria-live="polite" hidden>
-            Спасибо! Мы свяжемся с вами в течение 1 рабочего часа.
+            Спасибо! Мы свяжемся с вами в ближайшее время.
           </div>
         </form>
 
