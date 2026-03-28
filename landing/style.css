@@ -816,10 +816,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
   animation: shimmer 3s ease-in-out infinite;
 }
-.messenger-btn--tg  { background: #2aabee; }
-.messenger-btn--tg:hover  { background: #229ed9; }
-.messenger-btn--max { background: #2aabee; }
-.messenger-btn--max:hover { background: #229ed9; }
+.messenger-btn--tg  { background: var(--color-navy-mid); }
+.messenger-btn--tg:hover  { background: var(--color-navy-light); }
+.messenger-btn--max { background: var(--color-navy-mid); }
+.messenger-btn--max:hover { background: var(--color-navy-light); }
 .messenger-btn--wa  { background: #25d366; }
 .messenger-btn--wa:hover  { background: #1dad55; }
 .messenger-btn--ig  { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -1096,10 +1096,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   background: var(--color-navy-light);
 }
 
-.fab__item--tg { background: #2aabee; }
-.fab__item--tg:hover { background: #229ed9; }
-.fab__item--max { background: #7b68ee; }
-.fab__item--max:hover { background: #6a5acd; }
+.fab__item--tg { background: var(--color-navy); }
+.fab__item--tg:hover { background: var(--color-navy-light); }
+.fab__item--max .max-icon { width: 1.1rem; height: 1.1rem; vertical-align: middle; }
+.fab__item--max { background: var(--color-navy); }
+.fab__item--max:hover { background: var(--color-navy-light); }
 
 @media (max-width: 768px) {
   .scroll-top {
